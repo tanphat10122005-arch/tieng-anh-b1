@@ -832,14 +832,15 @@
     if (!testData) return;
 
     let html = `
-      <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: var(--radius-md); padding: 1.15rem 1.35rem; margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
-        <div>
-          <div style="font-weight: 800; font-size: 1.05rem; color: #10b981; margin-bottom: 0.25rem;">
-            ✨ Bộ Đề CBT Đã Được Số Hóa Hoàn Chỉnh Toàn Bộ Chữ (100% Digital Text)
-          </div>
-          <div style="font-size: 0.86rem; color: var(--text-muted); line-height: 1.5;">
-            Toàn bộ bài đọc, thông báo và từng câu hỏi được trình bày rõ ràng, không có dấu khoanh đỏ để bạn tự tin luyện tập. Chọn phương án để trả lời.
-          </div>
+      <div class="cbt-banner-compact">
+        <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+          <span style="font-size: 1.1rem;">✨</span>
+          <span style="font-weight: 800; font-size: 0.92rem; color: #10b981;">
+            Bộ Đề CBT Chuẩn Số Hóa 100% Chữ (Digital Text)
+          </span>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">
+            • Bố cục 2 cột song song Bài đọc & Câu hỏi chuẩn Cambridge CBT
+          </span>
         </div>
       </div>
     `;
@@ -847,40 +848,42 @@
 
     testData.reading.parts.forEach(part => {
       html += `
-        <div style="margin-bottom: 2.5rem;">
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; border-bottom: 2px solid rgba(79, 70, 229, 0.3); padding-bottom: 0.5rem;">
-            <h3 style="font-size: 1.25rem; color: #818cf8;">${part.title}</h3>
+        <div class="cbt-part-block">
+          <div class="cbt-part-header">
+            <h3 class="cbt-part-title">${part.title}</h3>
           </div>
-          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.25rem; font-style: italic;">${part.instruction}</p>
+          <p class="cbt-part-instruction">${part.instruction}</p>
       `;
 
-      if (part.passage) {
-        html += `
-          <div class="q-context-box" style="border-left-color: var(--secondary); background: rgba(15, 23, 42, 0.6); margin-bottom: 1.5rem; padding: 1.35rem;">
-            <h4 style="color: var(--secondary); font-size: 1.15rem; margin-bottom: 0.65rem;">📖 ${part.passageTitle || 'Reading Text'}</h4>
-            <div style="font-size: 0.98rem; line-height: 1.75; color: var(--text-main);">${part.passage.replace(/\n\n/g, '<br><br>')}</div>
-          </div>
-        `;
-      }
-
-      // Part 2: Matching People with Reviews / Courses
+      // CASE 1: Part 2 - Matching Teenagers with Places / Options A - H
       if (part.teenagers && part.places) {
         html += `
-          <div style="background: rgba(79, 70, 229, 0.06); border: 1px solid rgba(79, 70, 229, 0.2); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 2rem;">
-            <h4 style="font-size: 1rem; color: var(--secondary); margin-bottom: 0.85rem; font-weight: 800;">
-              📋 Danh Sách Các Lựa Chọn (Reviews / Courses A - H):
-            </h4>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 0.85rem;">
-              ${part.places.map(p => `
-                <div style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.85rem;">
-                  <div style="font-weight: 800; color: #818cf8; font-size: 0.92rem; margin-bottom: 0.35rem;">
-                    ${p.code}. ${p.title}
+          <div class="cbt-reading-split-layout">
+            <!-- Cột Trái: Danh Sách 8 Lựa Chọn A - H (Sticky / Scrollable) -->
+            <div class="cbt-passage-column">
+              <div class="cbt-passage-card">
+                <div class="cbt-passage-header">
+                  <span class="cbt-section-tag">📋 DANH SÁCH LỰA CHỌN (A - H)</span>
+                  <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.25rem;">
+                    Đối chiếu thông tin các mục A - H dưới đây để ghép với từng người:
                   </div>
-                  <div style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">${p.desc}</div>
                 </div>
-              `).join('')}
+                <div class="cbt-places-list">
+                  ${part.places.map(p => `
+                    <div class="cbt-place-card">
+                      <div class="cbt-place-title">
+                        <span class="cbt-place-code">${p.code}</span>
+                        <span>${p.title}</span>
+                      </div>
+                      <div class="cbt-place-desc">${p.desc}</div>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
             </div>
-          </div>
+
+            <!-- Cột Phải: 5 Câu Hỏi Người Cần Tìm (Q6 - Q10) -->
+            <div class="cbt-questions-column">
         `;
 
         part.teenagers.forEach(t => {
@@ -894,7 +897,7 @@
                 <span class="q-num-badge">Câu ${t.number}</span>
                 <span class="q-person-badge">👤 ${t.name}</span>
               </div>
-              <div class="q-context-box">
+              <div class="q-context-box" style="margin-top: 0.25rem;">
                 <div class="q-context-label">📌 Nhu cầu & Sở thích của ${t.name}:</div>
                 <div class="q-context-body">${t.demand}</div>
               </div>
@@ -902,7 +905,7 @@
                 <span class="q-prompt-icon">👉</span>
                 <span>Chọn phương án phù hợp nhất cho <strong>${t.name}</strong> (A - H):</span>
               </div>
-              <div class="options-group" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0.65rem;">
+              <div class="options-group cbt-options-grid-4">
                 ${['A','B','C','D','E','F','G','H'].map(opt => `
                   <div class="option-item ${currentAns === opt ? 'selected' : ''}" data-qkey="${qKey}" data-opt="${opt}">
                     <div class="option-key">${opt}</div>
@@ -917,9 +920,34 @@
             </div>
           `;
         });
+
+        html += `
+            </div>
+          </div>
+        `;
       }
 
-      if (part.questions) {
+      // CASE 2: Parts with a Shared Reading Passage (Part 3, Part 4, Part 5)
+      else if (part.passage && part.questions) {
+        html += `
+          <div class="cbt-reading-split-layout">
+            <!-- Cột Trái: Bài Đọc Cố Định (Sticky / Scrollable) -->
+            <div class="cbt-passage-column">
+              <div class="cbt-passage-card">
+                <div class="cbt-passage-header">
+                  <span class="cbt-section-tag">📖 BÀI ĐỌC (READING PASSAGE)</span>
+                  <h4 class="cbt-passage-title">${part.passageTitle || 'Reading Text'}</h4>
+                </div>
+                <div class="cbt-passage-body">
+                  ${part.passage.replace(/\n\n/g, '<br><br>')}
+                </div>
+              </div>
+            </div>
+
+            <!-- Cột Phải: Các Câu Hỏi Liên Quan -->
+            <div class="cbt-questions-column">
+        `;
+
         part.questions.forEach(q => {
           const qKey = `${unit.id}_r_${q.number}`;
           const currentAns = state.answers[qKey];
@@ -932,14 +960,6 @@
               </div>
           `;
 
-          if (q.context) {
-            html += `
-              <div class="q-context-box">
-                <div class="q-context-label">📌 Thông tin / Biển báo (Notice):</div>
-                <div class="q-context-body">${q.context}</div>
-              </div>
-            `;
-          }
           if (q.question) {
             html += `
               <div class="q-prompt-text">
@@ -981,11 +1001,111 @@
           html += `</div>`;
 
           html += `
-            <div class="explanation-box" id="exp-${qKey}" style="display: none;">
-              <div class="explanation-title">💡 Giải thích (Đáp án đúng: ${q.correct})</div>
-              <div style="font-size: 0.92rem; line-height: 1.6;">${q.explanation}</div>
+              <div class="explanation-box" id="exp-${qKey}" style="display: none;">
+                <div class="explanation-title">💡 Giải thích (Đáp án đúng: ${q.correct})</div>
+                <div style="font-size: 0.92rem; line-height: 1.6;">${q.explanation}</div>
+              </div>
             </div>
-          </div>`;
+          `;
+        });
+
+        html += `
+            </div>
+          </div>
+        `;
+      }
+
+      // CASE 3: Standalone Questions (Part 1 Notices / Signs with Context)
+      else if (part.questions) {
+        part.questions.forEach(q => {
+          const qKey = `${unit.id}_r_${q.number}`;
+          const currentAns = state.answers[qKey];
+          gridHtml += `<button class="grid-num-btn ${currentAns ? 'answered' : ''}" data-goto="q-${q.number}">${q.number}</button>`;
+
+          html += `
+            <div class="q-container" id="q-${q.number}">
+              <div class="q-header">
+                <span class="q-num-badge">Câu ${q.number}</span>
+              </div>
+          `;
+
+          if (q.context) {
+            // Split layout for Notice vs Question + Options
+            html += `
+              <div class="cbt-q-split">
+                <div class="cbt-q-left">
+                  <div class="q-context-box" style="margin: 0;">
+                    <div class="q-context-label">📌 Thông tin / Biển báo (Notice):</div>
+                    <div class="q-context-body">${q.context}</div>
+                  </div>
+                </div>
+                <div class="cbt-q-right">
+                  ${q.question ? `
+                    <div class="q-prompt-text" style="margin-top: 0;">
+                      <span class="q-prompt-icon">❓</span>
+                      <span>${q.question}</span>
+                    </div>
+                  ` : ''}
+                  <div class="options-group">
+            `;
+            if (q.options) {
+              q.options.forEach(opt => {
+                html += `
+                  <div class="option-item ${currentAns === opt.key ? 'selected' : ''}" data-qkey="${qKey}" data-opt="${opt.key}">
+                    <div class="option-key">${opt.key}</div>
+                    <div class="option-text">${opt.text}</div>
+                  </div>
+                `;
+              });
+            }
+            html += `
+                  </div>
+                  <div class="explanation-box" id="exp-${qKey}" style="display: none;">
+                    <div class="explanation-title">💡 Giải thích (Đáp án đúng: ${q.correct})</div>
+                    <div style="font-size: 0.92rem; line-height: 1.6;">${q.explanation}</div>
+                  </div>
+                </div>
+              </div>
+            `;
+          } else {
+            if (q.question) {
+              html += `
+                <div class="q-prompt-text">
+                  <span class="q-prompt-icon">❓</span>
+                  <span>${q.question}</span>
+                </div>
+              `;
+            } else if (q.statement) {
+              html += `
+                <div class="q-prompt-text">
+                  <span class="q-prompt-icon">📝</span>
+                  <span>${q.statement}</span>
+                </div>
+              `;
+            }
+
+            html += `<div class="options-group">`;
+            if (q.options) {
+              q.options.forEach(opt => {
+                html += `
+                  <div class="option-item ${currentAns === opt.key ? 'selected' : ''}" data-qkey="${qKey}" data-opt="${opt.key}">
+                    <div class="option-key">${opt.key}</div>
+                    <div class="option-text">${opt.text}</div>
+                  </div>
+                `;
+              });
+            }
+            html += `</div>`;
+
+            html += `
+              <div class="explanation-box" id="exp-${qKey}" style="display: none;">
+                <div class="explanation-title">💡 Giải thích (Đáp án đúng: ${q.correct})</div>
+                <div style="font-size: 0.92rem; line-height: 1.6;">${q.explanation}</div>
+              </div>
+            `;
+          }
+
+          html += `</div>`;
         });
       }
 
