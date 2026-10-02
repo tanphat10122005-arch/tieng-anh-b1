@@ -1312,7 +1312,7 @@
                 <div style="margin: 1rem 0; border-radius: var(--radius-md); overflow: hidden; border: 1.5px solid var(--border); background: #fff; padding: 0.65rem; text-align: center;">
                   <img src="assets/listening/t${unit.unitNumber}_q${q}.png" alt="Question ${q}" style="max-width: 100%; height: auto; display: inline-block;">
                 </div>
-                <div class="options-group" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.85rem;">
+                <div class="options-group options-grid-3">
                   ${['A','B','C'].map(opt => `
                     <div class="option-item ${currentAns === opt ? 'selected' : ''}" data-qkey="${qKey}" data-opt="${opt}">
                       <div class="option-key">${opt}</div>
@@ -1354,7 +1354,7 @@
                   <span class="q-num-badge">Câu ${q}</span>
                   <button class="btn-icon btn-speak-q" data-text="Question ${q}." style="width: 32px; height: 32px; font-size: 0.85rem;">🔊</button>
                 </div>
-                <div class="options-group" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.85rem;">
+                <div class="options-group options-grid-3">
                   ${['A','B','C'].map(opt => `
                     <div class="option-item ${currentAns === opt ? 'selected' : ''}" data-qkey="${qKey}" data-opt="${opt}">
                       <div class="option-key">${opt}</div>
@@ -1864,7 +1864,7 @@
         <h3 style="font-size: 1.25rem; font-weight: 800; color: #fbbf24; margin-bottom: 0.5rem;">${p2.title}</h3>
         <div class="q-context-box" style="white-space: pre-line; margin-bottom: 1.25rem;">${p2.prompt}</div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start;">
+        <div class="responsive-2col-grid" style="align-items: start;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
               <span style="font-weight: 700; font-size: 0.9rem;">Khung soạn thảo bài làm của bạn:</span>
@@ -1900,7 +1900,7 @@
           <h4 style="font-size: 1.1rem; color: var(--primary); margin-bottom: 0.5rem;">Câu hỏi ${task.number}: ${task.type}</h4>
           <div class="q-context-box" style="white-space: pre-line; margin-bottom: 1rem;">${task.prompt}</div>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start;">
+          <div class="responsive-2col-grid" style="align-items: start;">
             <div>
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
                 <span style="font-weight: 700; font-size: 0.9rem;">Bài làm của bạn:</span>
@@ -2025,7 +2025,7 @@
         <h3 style="font-size: 1.25rem; font-weight: 800; color: #f472b6; margin-bottom: 0.5rem;">${currentSpk.part2.title}</h3>
         <div class="q-context-box" style="margin-bottom: 1.5rem;">${currentSpk.part2.scenario}</div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start;">
+        <div class="responsive-2col-grid" style="align-items: start;">
           <div style="background: #fff; padding: 0.5rem; border-radius: var(--radius-md); border: 1.5px solid var(--border); text-align: center;">
             <img src="${currentSpk.part2.image}" alt="Speaking Part 2" style="max-width: 100%; height: auto; border-radius: var(--radius-sm);">
           </div>
@@ -2063,7 +2063,7 @@
           <img src="${currentSpk.part3.image}" alt="Speaking Part 3 Photos" style="max-width: 100%; height: auto; border-radius: var(--radius-sm);">
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+        <div class="responsive-2col-grid">
           <div style="background: var(--bg-surface); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border);">
             <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">${currentSpk.part3.photoA.title}</h4>
             <p style="font-size: 0.92rem; line-height: 1.6; margin-bottom: 1rem;">${currentSpk.part3.photoA.description}</p>
