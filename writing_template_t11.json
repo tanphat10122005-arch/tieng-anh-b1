@@ -1,0 +1,93 @@
+{
+  "title": "Paper 1 - Writing (Part 1 to Part 3)",
+  "duration": 40,
+  "parts": [
+    {
+      "partNumber": 1,
+      "title": "Part 1: Questions 1 - 5 (Sentence Transformation)",
+      "instruction": "Here are some sentences about being in hospital. For each question, complete the second sentence so that it means the same as the first. Use no more than three words.",
+      "questions": [
+        {
+          "number": 1,
+          "first": "She prefers pizza to hospital food.",
+          "second": "She'd rather eat pizza [GAP] hospital food.",
+          "acceptedAnswers": [
+            "than",
+            "than eat"
+          ],
+          "explanation": "Cấu trúc: would rather do something THAN do something else (thích làm gì hơn làm gì)."
+        },
+        {
+          "number": 2,
+          "first": "Her leg hurt during her stay in the hospital.",
+          "second": "Her leg hurt while [GAP] in the hospital.",
+          "acceptedAnswers": [
+            "she was"
+          ],
+          "explanation": "Rút gọn mệnh đề thời gian: during her stay = while she was (khi cô ấy đang ở bệnh viện)."
+        },
+        {
+          "number": 3,
+          "first": "The nurse checked to see if she had a fever.",
+          "second": "She had her [GAP] to see if she had a fever.",
+          "acceptedAnswers": [
+            "temperature taken"
+          ],
+          "explanation": "Thể truyền khiến: have something done -> have her temperature taken (được y tá đo nhiệt độ)."
+        },
+        {
+          "number": 4,
+          "first": "The doctor operated on her broken leg.",
+          "second": "Her broken leg [GAP] on.",
+          "acceptedAnswers": [
+            "was operated"
+          ],
+          "explanation": "Câu bị động thì quá khứ đơn: operated on -> was operated on."
+        },
+        {
+          "number": 5,
+          "first": "She asked the nurse if she could have a pill for her headache.",
+          "second": "'Please [GAP] a pill for my headache?'",
+          "acceptedAnswers": [
+            "can I have",
+            "could I have",
+            "may I have"
+          ],
+          "explanation": "Lời yêu cầu lịch sự trực tiếp: Can I have / Could I have / May I have."
+        }
+      ]
+    },
+    {
+      "partNumber": 2,
+      "title": "Part 2: Question 6 (Short Message)",
+      "prompt": "You and your friend Pete are going away for a camping weekend. Write a note to Pete. In your note you should:\n• suggest a time to leave on Friday\n• tell him what to bring\n• suggest somewhere to eat on your first night\nWrite 35-45 words.",
+      "sampleAnswer": "Hi Pete,\nShall we head off around 4 pm on Friday to beat the traffic? Don't forget to pack your sleeping bag and a sturdy flashlight. For dinner on our first night, why don't we try the riverside pub near the campsite?\nSee you soon!",
+      "wordCount": 44,
+      "keyPoints": [
+        "Đề xuất giờ khởi hành (4 pm Friday)",
+        "Nhắc mang đồ (sleeping bag, flashlight)",
+        "Gợi ý quán ăn (riverside pub)"
+      ]
+    },
+    {
+      "partNumber": 3,
+      "title": "Part 3: Questions 7 & 8 (Letter or Story)",
+      "tasks": [
+        {
+          "number": 7,
+          "type": "Letter",
+          "prompt": "This is part of a letter you receive from an English friend:\n'I need to get a summer job. I have been offered a job in a restaurant for the summer. I know you have done this type of job. What advice can you give me about the job and what to expect?'\nNow write a letter to your friend giving your advice. Write about 100 words.",
+          "sampleAnswer": "Dear Alex,\n\nIt's great to hear from you! Working in a restaurant during summer is a fantastic opportunity to earn money and make new friends.\n\nFrom my own experience, the job can be quite demanding and fast-paced, especially on busy weekend evenings. You will be on your feet for several hours, so make sure you wear very comfortable shoes. The key to doing well is being friendly to customers and always listening carefully to your manager's instructions.\n\nDon't worry if it feels overwhelming on your first few shifts; you'll get used to it quickly. You'll definitely have lots of fun!\n\nBest wishes,\nNam",
+          "wordCount": 105
+        },
+        {
+          "number": 8,
+          "type": "Story",
+          "prompt": "Your English teacher wants you to write a story. This is the title of the story: 'The empty house'. Write your story in about 100 words.",
+          "sampleAnswer": "The Empty House\n\nIt was a stormy evening when Tom took shelter from the pouring rain inside an old empty house at the end of the lane. The wooden floorboards creaked beneath his boots, and the wind whistled softly through broken windows.\n\nAs he walked towards the living room, he suddenly noticed a faint yellow light coming from under the basement door. Heart pounding with curiosity, he pushed the door open and took three cautious steps down. To his utter astonishment, a tiny grey kitten was sitting next to an old lantern! Relieved and happy, Tom wrapped it warmly in his jacket and headed home.",
+          "wordCount": 102
+        }
+      ]
+    }
+  ]
+}

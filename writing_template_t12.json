@@ -1,0 +1,93 @@
+{
+  "title": "Paper 1 - Writing (Part 1 to Part 3)",
+  "duration": 40,
+  "parts": [
+    {
+      "partNumber": 1,
+      "title": "Part 1: Questions 1 - 5 (Sentence Transformation)",
+      "instruction": "Here are some sentences about Paul's winter holiday. For each sentence, complete the second sentence so that it means the same as the first. Use no more than three words.",
+      "questions": [
+        {
+          "number": 1,
+          "first": "Peter asked the receptionist if someone had called him in the morning.",
+          "second": "Peter asked 'Did [GAP] call me in the morning?'",
+          "acceptedAnswers": [
+            "someone",
+            "anyone"
+          ],
+          "explanation": "Chuyển câu gián tiếp sang trực tiếp: Did someone / anyone call me?"
+        },
+        {
+          "number": 2,
+          "first": "Peter's airplane seat was too small for him to sit.",
+          "second": "Peter's airplane seat wasn't [GAP] for him to sit.",
+          "acceptedAnswers": [
+            "big enough",
+            "large enough"
+          ],
+          "explanation": "Cấu trúc tương đương: too small = not big enough."
+        },
+        {
+          "number": 3,
+          "first": "It took Peter a long time to decide which places to visit.",
+          "second": "Peter spent a lot of time [GAP] which places to visit.",
+          "acceptedAnswers": [
+            "deciding"
+          ],
+          "explanation": "Cấu trúc: spend time doing something -> spent a lot of time deciding."
+        },
+        {
+          "number": 4,
+          "first": "He only ate lunch when he had finished exploring the town.",
+          "second": "He didn't have lunch [GAP] finished exploring the town.",
+          "acceptedAnswers": [
+            "until he had",
+            "before he had"
+          ],
+          "explanation": "Cấu trúc: not... until (chỉ ăn trưa cho đến khi đã tham quan xong)."
+        },
+        {
+          "number": 5,
+          "first": "It was the best holiday he had ever had.",
+          "second": "He had [GAP] a good holiday.",
+          "acceptedAnswers": [
+            "never had such"
+          ],
+          "explanation": "Cấu trúc so sánh: had never had such a good holiday (chưa bao giờ có một kỳ nghỉ tuyệt vời như thế)."
+        }
+      ]
+    },
+    {
+      "partNumber": 2,
+      "title": "Part 2: Question 6 (Short Email)",
+      "prompt": "You ordered a pizza last night. You were not happy with what they sent you. Send an email to the pizza shop. In your email, you should tell them:\n• what you ordered\n• why you are not happy\n• what you want them to do\nWrite 35-45 words.",
+      "sampleAnswer": "Dear Manager,\nLast night I ordered a large pepperoni pizza with extra cheese. Unfortunately, you delivered a cold vegetarian pizza with burnt crust. I would appreciate it if you could refund my money or send a fresh replacement pizza tonight.\nRegards,\nJohn",
+      "wordCount": 42,
+      "keyPoints": [
+        "Món đã đặt (large pepperoni pizza)",
+        "Lý do thất vọng (cold vegetarian, burnt crust)",
+        "Yêu cầu giải quyết (refund or fresh replacement)"
+      ]
+    },
+    {
+      "partNumber": 3,
+      "title": "Part 3: Questions 7 & 8 (Letter or Story)",
+      "tasks": [
+        {
+          "number": 7,
+          "type": "Letter",
+          "prompt": "This is part of a letter you receive from a friend:\n'We had a test at school today and my best friend copied all my answers. Last night I had studied really hard and he had gone to see that new movie. I don't know what to do because the teacher may think I copied his work. Can you advise me? What should I do?'\nNow write a letter to your friend giving your advice. Write about 100 words.",
+          "sampleAnswer": "Dear Sam,\n\nI was sorry to hear about your difficult situation at school today. It's really frustrating when you study hard and someone takes advantage of your effort.\n\nIn my opinion, you should speak frankly to your friend first. Tell him calmly that cheating puts you both at serious risk of getting zero marks. Explain that you cannot let him do it again in future exams.\n\nHowever, if the teacher suspects something and calls you in, you must tell the absolute truth. The teacher will recognize that you know the material well because you prepared thoroughly.\n\nStay strong,\nPhong",
+          "wordCount": 104
+        },
+        {
+          "number": 8,
+          "type": "Story",
+          "prompt": "Your English teacher wants you to write a story. The story must start with these words: 'I knew my life would never be the same again!' Write your story in about 100 words.",
+          "sampleAnswer": "I knew my life would never be the same again! The golden envelope resting on my desk had an official seal from the Royal Academy of Music. My fingers trembled as I carefully slid the letter out and read the opening sentence: 'Congratulations, you have been awarded a full scholarship.'\n\nI couldn't believe my eyes! For the past five years, I had practiced the violin for four hours every single evening in my cramped attic room, dreaming of this exact moment. Tears of joy rolled down my cheeks as I sprinted downstairs to hug my parents. My musical journey was finally beginning!",
+          "wordCount": 104
+        }
+      ]
+    }
+  ]
+}

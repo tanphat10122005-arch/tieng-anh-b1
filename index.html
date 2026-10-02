@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cambridge B1 Preliminary (PET) - Ôn Luyện Toàn Diện 12 Đề Thi</title>
+  <meta name="description" content="Nền tảng ôn thi Cambridge English B1 Preliminary (PET) toàn diện với 12 đề Practice Tests, thi thử CBT bấm giờ, Audio đọc tự động, phòng luyện Viết và Nói có bài mẫu Band 5.">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Ambient Glow Effect -->
+  <div class="bg-glow"></div>
+
+  <!-- Main Header & Navigation -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand" data-jump-tab="home">
+        <div class="brand-icon">🎓</div>
+        <div class="brand-text">
+          <h1>CAMBRIDGE B1 MASTER</h1>
+          <p>Succeed in Preliminary (PET) • 12 Practice Tests</p>
+        </div>
+      </div>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <button class="nav-btn active" data-tab="home">🏠 Trang Chủ</button>
+        <button class="nav-btn" data-tab="roadmap">📊 Phân Loại 12 Unit</button>
+        <button class="nav-btn" data-tab="exam">📝 Thi Thử CBT</button>
+        <button class="nav-btn" data-tab="listening">🎧 Luyện Nghe Audio</button>
+        <button class="nav-btn" data-tab="writing">✍️ Luyện Viết</button>
+        <button class="nav-btn" data-tab="speaking">🗣️ Luyện Nói</button>
+        <button class="nav-btn" data-tab="flashcards">🗂️ Flashcards</button>
+        <button class="nav-btn" data-tab="archive">📖 Thư Viện 12 Đề</button>
+      </nav>
+
+      <div class="header-actions">
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          <span id="global-stats-pill">B1 Ready</span>
+        </div>
+        <button class="btn-icon" id="theme-toggle-btn" title="Chuyển chế độ sáng / tối" aria-label="Toggle theme">
+          🌙
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Application Body -->
+  <main id="app-root">
+    <!-- 1. Home / Dashboard -->
+    <section id="section-home" class="view-section active">
+      <div id="dashboard-content"></div>
+    </section>
+
+    <!-- 1.5. Roadmap 12 Units Progress Tracker -->
+    <section id="section-roadmap" class="view-section">
+      <div id="roadmap-workspace"></div>
+    </section>
+
+    <!-- 2. Exam Workspace (CBT Mode) -->
+    <section id="section-exam" class="view-section">
+      <div id="exam-workspace"></div>
+    </section>
+
+    <!-- 3. Listening Lab with Audio Player -->
+    <section id="section-listening" class="view-section">
+      <div id="listening-workspace"></div>
+    </section>
+
+    <!-- 4. Writing Studio -->
+    <section id="section-writing" class="view-section">
+      <div id="writing-workspace"></div>
+    </section>
+
+    <!-- 5. Speaking Arena -->
+    <section id="section-speaking" class="view-section">
+      <div id="speaking-workspace"></div>
+    </section>
+
+    <!-- 6. Flashcards & Vocabulary -->
+    <section id="section-flashcards" class="view-section">
+      <div id="flashcards-workspace"></div>
+    </section>
+
+    <!-- 7. Book Viewer (Tests 1 - 10 Archive) -->
+    <section id="section-archive" class="view-section">
+      <div id="archive-workspace"></div>
+    </section>
+  </main>
+
+  <!-- Modal Overlays -->
+  <div id="score-modal-overlay" class="modal-overlay"></div>
+  <div id="zoom-modal-overlay" class="modal-overlay"></div>
+
+  <!-- App Footer -->
+  <footer class="app-footer">
+    <p>
+      Cambridge English B1 Preliminary (PET) Mastery System • Biên soạn & Tối ưu từ giáo trình Global ELT
+    </p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

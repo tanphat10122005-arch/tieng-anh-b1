@@ -1,0 +1,29 @@
+# Temporary and cache files
+__pycache__/
+*.pyc
+scratch/
+.tempmediaStorage/
+
+# Large raw PDF sources (not needed for web deployment)
+*.pdf
+
+# Temporary raw page scans (the cropped assets are stored in assets/)
+page_*.png
+speaking_p*.png
+speaking_title_*.png
+listening_p*.png
+temp_*.png
+temp_*.jpg
+p19_q6.png
+
+# OCR and raw intermediate JSON files
+reading_ocr_cache.json
+extracted_raw.json
+writing_ocr_extracted.json
+digital_tests_*.json
+digital_test_*.json
+test_11_12_extracted.txt
+
+# OS metadata
+Thumbs.db
+.DS_Store
