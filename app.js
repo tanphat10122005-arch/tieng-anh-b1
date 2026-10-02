@@ -323,9 +323,9 @@
         <div class="module-card" data-jump-tab="exam">
           <div class="module-top">
             <div class="module-icon-wrap" style="background: rgba(6, 182, 212, 0.15); color: #22d3ee;">📝</div>
-            <span class="badge-tag" style="margin: 0;">Full CBT</span>
+            <span class="badge-tag" style="margin: 0;">12 Đề Thi</span>
           </div>
-          <h3>Phòng Thi Trực Tuyến CBT (12 Unit)</h3>
+          <h3>Phòng Thi Trực Tuyến (12 Unit)</h3>
           <p>Làm bài thi trắc nghiệm bấm giờ cho cả 12 đề thi, tự động đối chiếu chính xác với đáp án khoanh đỏ từ sách gốc.</p>
           <div class="module-footer">
             <span>Thang điểm 120-170</span>
@@ -524,7 +524,7 @@
                 <div class="unit-theme">${u.theme}</div>
 
                 <div class="unit-skills-bar">
-                  <span class="skill-tag">📖 Đọc: 35 câu CBT</span>
+                  <span class="skill-tag">📖 Đọc: 35 câu</span>
                   <span class="skill-tag">🎧 Nghe: 25 câu Audio</span>
                   <span class="skill-tag">✍️ Viết Band 5</span>
                   <span class="skill-tag">🗣️ Nói phỏng vấn</span>
@@ -532,12 +532,12 @@
 
                 ${prog.score ? `
                   <div style="background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: var(--radius-sm); padding: 0.5rem 0.85rem; margin-bottom: 0.85rem; font-size: 0.86rem; color: #10b981; font-weight: 700; display: flex; align-items: center; justify-content: space-between;">
-                    <span>🏆 Điểm CBT Đạt Được:</span>
+                    <span>🏆 Điểm Đạt Được:</span>
                     <span style="font-size: 1.05rem;">${prog.score} / 170</span>
                   </div>
                 ` : `
                   <div style="background: rgba(255, 255, 255, 0.03); border: 1px dashed var(--border); border-radius: var(--radius-sm); padding: 0.45rem 0.85rem; margin-bottom: 0.85rem; font-size: 0.8rem; color: var(--text-muted);">
-                    Chưa thi thử CBT • Sẵn sàng làm bài
+                    Chưa thi thử • Sẵn sàng làm bài
                   </div>
                 `}
 
@@ -548,7 +548,7 @@
 
               <div class="unit-card-actions">
                 <button class="btn-primary" data-jump-tab="exam" data-unit-id="${u.id}">
-                  📝 Thi Thử CBT
+                  📝 Thi Thử
                 </button>
                 <button class="btn-secondary" data-jump-tab="listening" data-unit-id="${u.id}">
                   🎧 Luyện Nghe
@@ -614,21 +614,17 @@
     container.innerHTML = `
       <div class="test-header-bar">
         <div class="test-title-group">
-          <h2>${currentUnit.title} - ${isDigital ? 'Phòng Thi CBT Số Hóa Trực Tuyến' : 'Phòng Thi CBT'}</h2>
-          <p>${currentUnit.theme} • ${isDigital ? 'Đầy đủ nội dung chữ, bài đọc và câu hỏi 100% không lộ đáp án' : 'Đối chiếu theo sách gốc'}</p>
+          <h2>${currentUnit.title} - Phòng Thi Trực Tuyến</h2>
+          <p>${currentUnit.theme} • Đầy đủ nội dung chữ, bài đọc và câu hỏi 100% không lộ đáp án</p>
         </div>
         <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
           <select id="exam-unit-selector" class="speed-select" style="padding: 0.55rem 1rem; font-weight: 700;">
             ${units.map(u => `
               <option value="${u.id}" ${u.id === currentUnit.id ? 'selected' : ''}>
-                Unit ${u.unitNumber}: ${u.title.split(':')[1] || u.title} ${u.isFullDigital ? '⭐ (Số Hóa Full Text)' : ''}
+                Unit ${u.unitNumber}: ${(u.title.split(':')[1] || u.title).trim()}
               </option>
             `).join('')}
           </select>
-
-          <button class="book-ref-floating-btn" id="btn-open-unit-book" data-startpage="${currentUnit.scanPages[0]}">
-            📖 Xem Trang Sách Gốc (Đối Chiếu)
-          </button>
 
           <div class="mode-toggle-group">
             <button class="mode-toggle-btn ${state.examMode === 'practice' ? 'active' : ''}" id="btn-mode-practice">Luyện tập</button>
@@ -831,19 +827,7 @@
     const testData = window.PET_DATA.practiceTests.find(t => t.id === testId);
     if (!testData) return;
 
-    let html = `
-      <div class="cbt-banner-compact">
-        <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
-          <span style="font-size: 1.1rem;">✨</span>
-          <span style="font-weight: 800; font-size: 0.92rem; color: #10b981;">
-            Bộ Đề CBT Chuẩn Số Hóa 100% Chữ (Digital Text)
-          </span>
-          <span style="font-size: 0.8rem; color: var(--text-muted);">
-            • Bố cục 2 cột song song Bài đọc & Câu hỏi chuẩn Cambridge CBT
-          </span>
-        </div>
-      </div>
-    `;
+    let html = '';
     let gridHtml = '';
 
     testData.reading.parts.forEach(part => {
