@@ -5,8 +5,7 @@
 ---
 
 ## 🚀 1. Cách Khởi Động Ứng Dụng
-- **Cách 1 (Nhanh nhất)**: Nhấp đúp chuột vào file [`start_app.bat`](file:///c:/Users/p/Downloads/b1/start_app.bat). Trình duyệt sẽ tự động mở trang web tại địa chỉ `http://localhost:8080`.
-- **Cách 2**: Mở trực tiếp file [`index.html`](file:///c:/Users/p/Downloads/b1/index.html) bằng bất kỳ trình duyệt nào (Google Chrome, Microsoft Edge, Firefox, Cốc Cốc...).
+- **Cách 1 (Nhanh nhất)**: Nhấp đúp chuột vào file [`start_app.bat`](file:///c:/Users/p/Downloads/b1/start_app.bat). Trình duyệt sẽ tự động mở trang web tại địa chỉ `http://shinzxeb1.onrender.com`
 
 ---
 
